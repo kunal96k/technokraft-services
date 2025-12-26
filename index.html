@@ -1,0 +1,1322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechnoKraft IT Solutions - Best IT Services Provider</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #0066CC;
+            --secondary-color: #00A8E8;
+            --dark-color: #1a1a2e;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --gradient: linear-gradient(135deg, #0066CC 0%, #00A8E8 100%);
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            color: var(--text-color);
+        }
+
+        /* Top Bar */
+        .top-bar {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 10px 0;
+            font-size: 14px;
+        }
+
+        .top-bar a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .top-bar a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* Navigation */
+        .navbar {
+            background: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.15);
+        }
+
+        .navbar-brand {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary-color) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            margin: 0 15px;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+
+        .navbar-nav .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: var(--primary-color);
+        }
+
+        .btn-quote {
+            background: var(--gradient);
+            color: #fff;
+            padding: 10px 30px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-quote:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.3);
+            color: #fff;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            min-height: 90vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: var(--gradient);
+            border-radius: 50%;
+            top: -200px;
+            right: -200px;
+            opacity: 0.1;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--dark-color);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero-content h1 .highlight {
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-content h1 .highlight::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 10px;
+            background: var(--secondary-color);
+            bottom: 5px;
+            left: 0;
+            opacity: 0.3;
+            z-index: -1;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary-custom {
+            background: var(--gradient);
+            color: #fff;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .btn-primary-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.4);
+            color: #fff;
+        }
+
+        .btn-video {
+            background: transparent;
+            color: var(--primary-color);
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 2px solid var(--primary-color);
+            transition: all 0.3s ease;
+        }
+
+        .btn-video:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-shape {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1;
+        }
+
+        .hero-shape::before {
+            content: '';
+            position: absolute;
+            width: 120%;
+            height: 120%;
+            background: var(--gradient);
+            opacity: 0.1;
+            border-radius: 50% 50% 0 50%;
+            top: -10%;
+            right: -10%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .hero-image img {
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+            position: relative;
+            z-index: 2;
+            width: 100%;
+        }
+
+        /* Stats Section */
+        .stats-section {
+            background: var(--gradient);
+            color: #fff;
+            padding: 60px 0;
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stat-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .stat-card i {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            opacity: 0.9;
+        }
+
+        .stat-card h3 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-card p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title span {
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-top: 10px;
+            color: var(--dark-color);
+        }
+
+        .service-card {
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid #f0f0f0;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            border-color: var(--primary-color);
+        }
+
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            font-size: 2rem;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotateY(360deg);
+        }
+
+        .service-card h4 {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* Courses Section */
+        .courses-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .course-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            height: 100%;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .course-image {
+            position: relative;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .course-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover .course-image img {
+            transform: scale(1.1);
+        }
+
+        .course-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--gradient);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        .course-content {
+            padding: 30px;
+        }
+
+        .course-content h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+
+        .course-content p {
+            color: #666;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .course-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 20px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .course-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Why Choose Section */
+        .why-choose-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .why-choose-content {
+            padding-right: 50px;
+        }
+
+        .feature-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            padding: 25px;
+            background: #f8f9fa;
+            border-radius: 15px;
+            transition: all 0.3s ease;
+        }
+
+        .feature-item:hover {
+            background: #fff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateX(10px);
+        }
+
+        .feature-number {
+            min-width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: #fff;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+
+        .feature-content h5 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+
+        .feature-content p {
+            color: #666;
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        .why-choose-image {
+            position: relative;
+        }
+
+        .why-choose-image img {
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            width: 100%;
+        }
+
+        /* Testimonials Section */
+        .testimonials-section {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+        }
+
+        .testimonial-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            margin: 20px;
+        }
+
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-avatar {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 3px solid #fff;
+        }
+
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .testimonial-info h5 {
+            margin: 0;
+            font-weight: 600;
+        }
+
+        .testimonial-info p {
+            margin: 5px 0 0 0;
+            opacity: 0.9;
+            font-size: 0.9rem;
+        }
+
+        .testimonial-content {
+            font-style: italic;
+            line-height: 1.8;
+            opacity: 0.95;
+        }
+
+        .testimonial-rating {
+            margin-top: 20px;
+            color: #ffd700;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .contact-card {
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+
+        .contact-card:hover {
+            background: var(--gradient);
+            color: #fff;
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .contact-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .contact-card:hover i {
+            color: #fff;
+        }
+
+        .contact-card h4 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .contact-card p, .contact-card a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .contact-form {
+            background: #f8f9fa;
+            padding: 50px;
+            border-radius: 20px;
+        }
+
+        .form-control, .form-select {
+            padding: 15px;
+            border-radius: 10px;
+            border: 2px solid #e0e0e0;
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 0.2rem rgba(0, 102, 204, 0.1);
+        }
+
+        .btn-submit {
+            background: var(--gradient);
+            color: #fff;
+            padding: 15px 50px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 102, 204, 0.4);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: #fff;
+            padding: 80px 0 30px;
+        }
+
+        .footer h5 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #fff;
+        }
+
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer ul li a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer ul li a:hover {
+            color: var(--secondary-color);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+            color: rgba(255,255,255,0.7);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-links a {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .why-choose-content {
+                padding-right: 0;
+                margin-bottom: 50px;
+            }
+
+            .navbar-nav .nav-link {
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .btn-primary-custom, .btn-video {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .section-title h2 {
+                font-size: 2rem;
+            }
+
+            .contact-form {
+                padding: 30px 20px;
+            }
+
+            .stat-card h3 {
+                font-size: 2rem;
+            }
+        }
+
+        /* Scroll to Top Button */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .scroll-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 102, 204, 0.4);
+        }
+    </style>
+</head>
+<body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <a href="mailto:info@tts.net.in"><i class="fas fa-envelope"></i> info@tts.net.in</a>
+                    <a href="tel:08408000048"><i class="fas fa-phone"></i> 84080 00048</a>
+                </div>
+                <div class="col-md-6 text-end">
+                    <a href="#">Login</a>
+                    <a href="#">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">TechnoKraft</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                </ul>
+                <a href="#contact" class="btn btn-quote ms-3">Get a Quote</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1>Innovative IT Solutions for <br><span class="highlight">your Business Growth</span></h1>
+                        <p>We provide cutting-edge software development, cloud solutions, and digital transformation services to help your business scale and achieve excellence.</p>
+                        <div class="hero-buttons">
+                            <a href="#services" class="btn-primary-custom">
+                                <span>Our Services</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                            <a href="#contact" class="btn-video">
+                                <i class="fas fa-envelope"></i>
+                                <span>Contact Us</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="hero-image">
+                        <div class="hero-shape"></div>
+                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800" alt="IT Training">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-project-diagram"></i>
+                        <h3>500+</h3>
+                        <p>Projects Delivered</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-smile"></i>
+                        <h3>100%</h3>
+                        <p>Client Satisfaction</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-user-tie"></i>
+                        <h3>50+</h3>
+                        <p>Expert Developers</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="stat-card">
+                        <i class="fas fa-calendar-alt"></i>
+                        <h3>10+</h3>
+                        <p>Years Experience</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <span>Our Services</span>
+                <h2>Comprehensive IT Solutions</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h4>Custom Software Development</h4>
+                        <p>Tailor-made software solutions designed to address your specific business challenges and improve operational efficiency.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h4>Web Application Development</h4>
+                        <p>Robust and scalable web applications built with modern frameworks to deliver seamless user experiences.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h4>Mobile App Development</h4>
+                        <p>Native and cross-platform mobile apps that engage users and extend your business reach on iOS and Android.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h4>Cloud Services & DevOps</h4>
+                        <p>Secure cloud infrastructure setup, migration, and DevOps automation to streamline your development lifecycle.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h4>AI & Machine Learning</h4>
+                        <p>Intelligent solutions leveraging AI and ML to analyze data, predict trends, and automate complex processes.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h4>IT Consulting & Strategy</h4>
+                        <p>Expert guidance to help you navigate the digital landscape and align technology with your business goals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Why Choose Section -->
+    <section class="why-choose-section" id="about">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="why-choose-content">
+                        <div class="section-title text-start">
+                            <span>Why Choose Us</span>
+                            <h2>Leading IT Solutions Provider in Nashik</h2>
+                            <p>Partner with us for reliable, scalable, and innovative IT services.</p>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-number">01</div>
+                            <div class="feature-content">
+                                <h5>Expert Team</h5>
+                                <p>Our team comprises seasoned developers and industry experts dedicated to delivering top-notch solutions.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-number">02</div>
+                            <div class="feature-content">
+                                <h5>Modern Infrastructure</h5>
+                                <p>We leverage the latest technologies and tools to ensure your projects are built on a solid foundation.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-number">03</div>
+                            <div class="feature-content">
+                                <h5>Client-Centric Approach</h5>
+                                <p>We prioritize your business goals and work closely with you to deliver custom solutions that drive growth.</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-number">04</div>
+                            <div class="feature-content">
+                                <h5>Agile Methodology</h5>
+                                <p>We follow agile practices to ensure rapid delivery, flexibility, and continuous improvement throughout the project lifecycle.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="why-choose-image">
+                        <img src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=800" alt="Why Choose Us">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-title">
+                <span style="color: rgba(255,255,255,0.9);">Testimonials</span>
+                <h2 style="color: #fff;">What Our Clients Say</h2>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Mohit+Mali&background=0D8ABC&color=fff" alt="Mohit Mali">
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Mohit Mali</h5>
+                                <p>CEO, TechStartup</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            "TechnoKraft delivered an exceptional software solution that transformed our business operations. The team's expertise and dedication are unmatched."
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Snehal+Tajane&background=667eea&color=fff" alt="Snehal Tajane">
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Snehal Tajane</h5>
+                                <p>CTO, FutureWave</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            "Great experience working with TechnoKraft. They understood our requirements perfectly and delivered a robust web application on time."
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-avatar">
+                                <img src="https://ui-avatars.com/api/?name=Nachiket+Mahajan&background=764ba2&color=fff" alt="Nachiket Mahajan">
+                            </div>
+                            <div class="testimonial-info">
+                                <h5>Nachiket Mahajan</h5>
+                                <p>Product Manager, InnovateX</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-content">
+                            "Their IT consulting services helped us streamline our digital strategy. Highly professional team with deep technical knowledge."
+                        </div>
+                        <div class="testimonial-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <span>Get In Touch</span>
+                <h2>Contact Us Today</h2>
+            </div>
+            <div class="row mb-5">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h4>Visit Us</h4>
+                        <p>1st Floor, Kanchwala Avenue<br>Above Viju's Dabeli, Thatte Nagar Marg<br>College Road, Nashik, Maharashtra 422005</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-card">
+                        <i class="fas fa-phone-alt"></i>
+                        <h4>Call Us</h4>
+                        <p><a href="tel:08408000048">84080 00048</a><br><a href="tel:08645628278">086456 28278</a></p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="contact-card">
+                        <i class="fas fa-envelope"></i>
+                        <h4>Email Us</h4>
+                        <p><a href="mailto:info@tts.net.in">info@tts.net.in</a><br><br>Mon - Sat: 09:30 AM - 08:30 PM</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="contact-form">
+                        <h3 class="text-center mb-4">Send Us a Message</h3>
+                        <form>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="text" class="form-control" placeholder="Your Name *" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <input type="email" class="form-control" placeholder="Your Email *" required>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input type="tel" class="form-control" placeholder="Phone Number *" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <select class="form-select" required>
+                                        <option value="">Select Course *</option>
+                                        <option>Data Science</option>
+                                        <option>Full Stack Development</option>
+                                        <option>Cyber Security</option>
+                                        <option>AWS & Cloud</option>
+                                        <option>Python Programming</option>
+                                        <option>DevOps</option>
+                                        <option>Machine Learning</option>
+                                        <option>Other</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <textarea class="form-control" rows="5" placeholder="Your Message"></textarea>
+                            <button type="submit" class="btn-submit">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <h5>TechnoKraft Training Solutions</h5>
+                    <p style="color: rgba(255,255,255,0.7); line-height: 1.8;">Best IT Training Institute in Nashik. We help you craft your tech skills with industry-expert training, modern infrastructure, and 100% placement assistance.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h5>Quick Links</h5>
+                    <ul>
+                        <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+                        <li><a href="#services"><i class="fas fa-chevron-right"></i> Services</a></li>
+                        <li><a href="#courses"><i class="fas fa-chevron-right"></i> Courses</a></li>
+                        <li><a href="#about"><i class="fas fa-chevron-right"></i> About Us</a></li>
+                        <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Popular Courses</h5>
+                    <ul>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Data Science</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Full Stack Development</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Cyber Security</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> AWS & Cloud</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Python Programming</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5>Contact Info</h5>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 15px; color: rgba(255,255,255,0.7);">
+                            <i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary-color);"></i>
+                            College Road, Nashik, Maharashtra 422005
+                        </li>
+                        <li style="margin-bottom: 15px;">
+                            <a href="tel:08408000048" style="color: rgba(255,255,255,0.7); text-decoration: none;">
+                                <i class="fas fa-phone-alt" style="margin-right: 10px; color: var(--secondary-color);"></i>
+                                84080 00048
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:info@tts.net.in" style="color: rgba(255,255,255,0.7); text-decoration: none;">
+                                <i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary-color);"></i>
+                                info@tts.net.in
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 TechnoKraft Training Solutions Pvt. Ltd. All Rights Reserved. | Made in India 🇮🇳</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- AOS Animation -->
+    
+    <script>
+        // Navbar scroll effect
+        let navbar = document.querySelector('.navbar');
+        let scrollTop = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+                scrollTop.classList.add('active');
+            } else {
+                navbar.classList.remove('scrolled');
+                scrollTop.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Scroll to top
+        scrollTop.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Form submission
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your interest! We will contact you soon.');
+            e.target.reset();
+        });
+
+        // Counter animation
+        const animateCounters = () => {
+            const counters = document.querySelectorAll('.stat-card h3');
+            const speed = 200;
+
+            counters.forEach(counter => {
+                const updateCount = () => {
+                    const target = counter.innerText.replace(/[^0-9.]/g, '');
+                    const count = +counter.getAttribute('data-count') || 0;
+                    const increment = target / speed;
+
+                    if (count < target) {
+                        counter.setAttribute('data-count', Math.ceil(count + increment));
+                        counter.innerText = Math.ceil(count + increment) + (counter.innerText.includes('+') ? '+' : '');
+                        setTimeout(updateCount, 1);
+                    } else {
+                        counter.innerText = target + (counter.innerText.includes('+') ? '+' : '');
+                    }
+                };
+
+                updateCount();
+            });
+        };
+
+        // Trigger counter animation when stats section is visible
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateCounters();
+                    observer.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            observer.observe(statsSection);
+        }
+    </script>
+</body>
+</html>
