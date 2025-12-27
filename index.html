@@ -83,13 +83,50 @@
     <section id="hero" class="hero section light-background">
 
       <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center" data-aos="zoom-out">
+        <div class="row gy-4 align-items-center">
+          <div class="col-lg-7 order-2 order-lg-1 d-flex flex-column justify-content-center">
             <h1>Innovative IT Services for <span>Your Business Growth</span></h1>
             <p>We deliver cutting-edge software development, cloud solutions, and digital transformation services to help businesses scale efficiently and achieve operational excellence.</p>
             <div class="d-flex">
               <a href="#about" class="btn-get-started">Get Started</a>
               <a href="#services" class="btn-watch-video d-flex align-items-center"><i class="bi bi-arrow-right-circle"></i><span>Our Services</span></a>
+            </div>
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2">
+            <div class="hero-contact-form">
+              <div class="form-header">
+                <h3>Get In Touch</h3>
+                <p>We'll call you back at your convenience</p>
+              </div>
+
+              <form id="heroContactForm">
+                <div class="mb-3">
+                  <div class="input-group">
+                    <span class="input-icon"><i class="bi bi-person-fill"></i></span>
+                    <input type="text" class="form-control" placeholder="Your Full Name *" required>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <div class="d-flex align-items-start gap-2">
+                    <i class="bi bi-check-circle-fill" style="color: var(--accent-color);"></i>
+                    <div>
+                      <div class="fw-semibold">No spam</div>
+                      <div class="small" style="color: #666;">Your info stays private</div>
+                    </div>
+                  </div>
+                </div>
+
+                <button type="button" class="btn-submit-hero" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  <span>Request Callback</span>
+                  <i class="bi bi-arrow-right"></i>
+                </button>
+              </form>
+
+              <div class="form-footer">
+                <p><i class="bi bi-shield-check"></i> Your information is secure with us</p>
+              </div>
             </div>
           </div>
         </div>
@@ -296,58 +333,6 @@
 
     </section>
 
-    <!-- <section id="clients" class="clients section light-background">
-
-      <div class="container">
-
-        <div class="swiper init-swiper">
-          <script type="application/json" class="swiper-config">
-            {
-              "loop": true,
-              "speed": 600,
-              "autoplay": {
-                "delay": 5000
-              },
-              "slidesPerView": "auto",
-              "pagination": {
-                "el": ".swiper-pagination",
-                "type": "bullets",
-                "clickable": true
-              },
-              "breakpoints": {
-                "320": {
-                  "slidesPerView": 2,
-                  "spaceBetween": 40
-                },
-                "480": {
-                  "slidesPerView": 3,
-                  "spaceBetween": 60
-                },
-                "640": {
-                  "slidesPerView": 4,
-                  "spaceBetween": 80
-                },
-                "992": {
-                  "slidesPerView": 6,
-                  "spaceBetween": 120
-                }
-              }
-            }
-          </script>
-          <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="https://via.placeholder.com/120x60/0066CC/FFFFFF?text=Client+1" class="img-fluid" alt="Client 1"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/120x60/00A8E8/FFFFFF?text=Client+2" class="img-fluid" alt="Client 2"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/120x60/0066CC/FFFFFF?text=Client+3" class="img-fluid" alt="Client 3"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/120x60/00A8E8/FFFFFF?text=Client+4" class="img-fluid" alt="Client 4"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/120x60/0066CC/FFFFFF?text=Client+5" class="img-fluid" alt="Client 5"></div>
-            <div class="swiper-slide"><img src="https://via.placeholder.com/120x60/00A8E8/FFFFFF?text=Client+6" class="img-fluid" alt="Client 6"></div>
-          </div>
-        </div>
-
-      </div>
-
-    </section> -->
-
     <section id="services" class="services section">
 
       <div class="container section-title" data-aos="fade-up">
@@ -473,7 +458,7 @@
             </div>
           </div>
 
-          </div>
+        </div>
 
       </div>
 
@@ -708,12 +693,101 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© 2025<strong class="px-1 sitename">TechnoKraft Services Pvt. Ltd.</strong> All Rights Reserved</p>
+      <p> 2025<strong class="px-1 sitename">TechnoKraft Services Pvt. Ltd.</strong> All Rights Reserved</p>
     </div>
 
   </footer>
 
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <button class="floating-contact-btn" id="openContactPanel" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
+    <i class="bi bi-telephone-fill"></i>
+    Get In Touch
+  </button>
+
+  <div class="modal fade contact-modal" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-scrollable modal-bottom-sheet">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <h5 class="modal-title" id="contactModalLabel">Get In Touch</h5>
+            <p class="mb-0">We'll call you back at your convenience</p>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="success-message" id="successMessage">
+            <i class="bi bi-check-circle-fill me-2"></i>
+            Thank you! We'll get back to you soon.
+          </div>
+
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label" for="name"><i class="bi bi-person-fill me-1"></i>Your Name *</label>
+              <input type="text" class="form-control" id="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="mobile"><i class="bi bi-phone-fill me-1"></i>Mobile Number *</label>
+              <input type="tel" class="form-control" id="mobile" placeholder="Enter your mobile number" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="email"><i class="bi bi-envelope-fill me-1"></i>Email Address *</label>
+              <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="service"><i class="bi bi-briefcase-fill me-1"></i>Service Interested In</label>
+              <select class="form-select" id="service">
+                <option value="">Select a service</option>
+                <option value="software">Custom Software Development</option>
+                <option value="web">Web Development</option>
+                <option value="mobile">Mobile App Development</option>
+                <option value="cloud">Cloud Services</option>
+                <option value="ai">AI & Machine Learning</option>
+                <option value="consulting">IT Consulting</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="message"><i class="bi bi-chat-text-fill me-1"></i>Your Message</label>
+              <textarea class="form-control" id="message" placeholder="Tell us about your project or requirements"></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn"><span>Request Callback</span></button>
+          </form>
+
+          <div style="margin-top: 28px;">
+            <div class="contact-info-bottom">
+              <div class="contact-info-icon"><i class="bi bi-telephone-fill"></i></div>
+              <div class="contact-info-text">
+                <h6>Call Us</h6>
+                <p>+91 84080 00048</p>
+              </div>
+            </div>
+
+            <div class="contact-info-bottom">
+              <div class="contact-info-icon"><i class="bi bi-envelope-fill"></i></div>
+              <div class="contact-info-text">
+                <h6>Email Us</h6>
+                <p>info@tts.net.in</p>
+              </div>
+            </div>
+
+            <div class="contact-info-bottom">
+              <div class="contact-info-icon"><i class="bi bi-geo-alt-fill"></i></div>
+              <div class="contact-info-text">
+                <h6>Visit Us</h6>
+                <p>1st Floor, Kanchwala Avenue, College Road, Nashik, Maharashtra 422005</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
@@ -743,9 +817,38 @@
     // Sticky header
     const selectHeader = document.querySelector('#header');
     if (selectHeader) {
-      window.addEventListener('scroll', () => {
-        window.scrollY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
-      });
+      const floatingContactBtn = document.getElementById('openContactPanel');
+      let lastScrollY = window.scrollY;
+
+      const handleHeaderScroll = () => {
+        const currentY = window.scrollY;
+
+        currentY > 100 ? selectHeader.classList.add('sticked') : selectHeader.classList.remove('sticked');
+
+        if (window.innerWidth >= 992) {
+          if (currentY < 80) {
+            selectHeader.classList.remove('nav-hidden');
+          } else if (currentY > lastScrollY + 6) {
+            selectHeader.classList.add('nav-hidden');
+          } else if (currentY < lastScrollY - 6) {
+            selectHeader.classList.remove('nav-hidden');
+          }
+        } else {
+          selectHeader.classList.remove('nav-hidden');
+        }
+
+        if (floatingContactBtn) {
+          // Hide floating button on hero/first section, show when scrolled away
+          currentY > 400 ? floatingContactBtn.classList.remove('is-hidden') : floatingContactBtn.classList.add('is-hidden');
+        }
+
+        lastScrollY = currentY;
+      };
+
+      window.addEventListener('scroll', handleHeaderScroll);
+      window.addEventListener('load', handleHeaderScroll);
+      window.addEventListener('resize', handleHeaderScroll);
+      handleHeaderScroll();
     }
 
     // Scroll top
@@ -845,6 +948,31 @@
 
     // PureCounter
     new PureCounter();
+
+    const contactForm = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const contactModalEl = document.getElementById('contactModal');
+
+    if (contactModalEl) {
+      contactModalEl.addEventListener('show.bs.modal', () => {
+        successMessage?.classList.remove('show');
+      });
+    }
+
+    if (contactForm) {
+      contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+
+        successMessage?.classList.add('show');
+        contactForm.reset();
+
+        setTimeout(() => {
+          const modalInstance = bootstrap.Modal.getInstance(contactModalEl);
+          modalInstance?.hide();
+          successMessage?.classList.remove('show');
+        }, 1600);
+      });
+    }
 
   </script>
 
